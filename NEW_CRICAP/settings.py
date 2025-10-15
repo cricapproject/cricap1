@@ -25,8 +25,7 @@ SECRET_KEY = 'django-insecure-ym+z)kz37zf+q8_%m_9@!296^$=9te8(g=2s1kofj1ad%buhjr
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cricap.my.id', 'www.cricap.my.id']
-
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -50,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = 'NEW_CRICAP.urls'
@@ -71,8 +71,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'NEW_CRICAP.wsgi.application'
-
-LOGIN_URL = '/login/'
 
 
 # Database
@@ -121,7 +119,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
+<<<<<<< HEAD
 STATIC_ROOT = BASE_DIR / "mystaticfiles"
+=======
+STATIC_ROOT = BASE_DIR / "staticfiles"
+>>>>>>> 16c3e48 (prepare for deployment)
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
